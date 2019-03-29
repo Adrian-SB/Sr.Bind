@@ -1,0 +1,18 @@
+; Resolusión inversa ipv4 192.192.160.100.0/24
+;
+$TTL	604800
+@	IN	SOA	pandora.iesgn.org. adri.gmail.com. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+
+@       IN      NS      pandora.iesgn.org.
+@       IN      NS      afrodita.iesgn.org.
+1       IN      PTR     pandora.iesgn.org. # 1º
+2       IN      PTR     afrodita.iesgn.org. # 2º
+3	IN	PTR	ns.informatica.iesgn.org. # Sub
+200     IN      PTR     correo.iesgn.org.
+201     IN      PTR     ftp.iesgn.org.

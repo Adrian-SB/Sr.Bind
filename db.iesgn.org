@@ -1,0 +1,31 @@
+;Fichero configuración zona iesgn.org
+;
+$TTL	604800
+@	IN	SOA	pandora.iesgn.org. adri.gmail.com. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+$ORIGIN iesgn.org.
+@       IN      NS              pandora.iesgn.org.
+@       IN      NS              afrodita.iesgn.org. ; dns secundario
+@       IN      MX      10      correo.iesgn.org.
+
+pandora         IN      A       192.168.100.1
+                IN      AAAA    2001:abcd::1
+afrodita        IN      A       192.168.100.2
+                IN      AAAA    2001:abcd::2
+www             IN      CNAME   pandora
+departamentos   IN      CNAME   pandora
+correo          IN      A       192.168.100.200
+ftp             IN      A       192.168.100.201
+
+;Delegación dominio
+;
+$ORIGIN informatica.iesgn.org.
+
+@       IN      NS      ns.informatica.iesgn.org.
+ns      IN      A       192.168.100.3
+        IN      AAAA    2001:abcd::3
