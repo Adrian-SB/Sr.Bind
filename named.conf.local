@@ -1,0 +1,22 @@
+include "/etc/bind/zones.rfc1918";
+
+zone "iesgn.org" {
+        type master;
+        file "/etc/bind/db.iesgn.org";
+        allow-transfer { esclavos; };
+        notify yes;
+};
+
+zone "100.168.192.in-addr.arpa"{
+        type master;
+        file "/etc/bind/db.192.168.100";
+        allow-transfer { esclavos; };
+        notify yes;
+};
+
+zone "0.0.0.0.0.0.0.0.d.c.b.a.1.0.0.2.ip6.arpa"{
+        type master;
+        file "/etc/bind/db.2001:abcd:0000:0000";
+        allow-transfer { esclavos; };
+        notify yes;
+};
